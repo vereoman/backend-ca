@@ -29,10 +29,10 @@ app.delete('/user', (req, res) => {
     }
     const index = users.findIndex(u => u.email.toLowerCase() === userQuery.toLowerCase());
     if (index === -1) {
-        return res.status(404).json({ message: 'User not found.' });
+        return res.status(404).json({ message: 'Email not found.' });
     }
     const removedUser = users.splice(index, 1);
-    return res.json({ message: 'User deleted.', data: removedUser[0] });
+    return res.json({ message: 'User deleted successfully.', data: removedUser[0] });
 });
 
 const PORT = process.env.PORT;
